@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import {View,Button,Image, Platform, PermissionsAndroid, Alert, StyleSheet} from 'react-native';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
 
+
 const CameraGalleryScreen = () => {
     const [imageUri, setImageUri] = useState<string | null>(null)
 
@@ -44,6 +45,7 @@ const openCamera = async() => {
 
      return(
         <View style={styles.container}>
+        
             <Button title='Open Camera' onPress={openCamera}/>
             <Button title='Open Gallery' onPress={openGallery}/>
              {imageUri && <Image source={{uri:imageUri}} style={styles.image}/> }
